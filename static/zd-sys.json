@@ -1,0 +1,3995 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "live Api Doc",
+        "description": "带电作业系统",
+        "license": {
+            "name": "Apache 2.0",
+            "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "Application Version: 1.0\n Spring Boot Version: 2.3.4.RELEASE"
+    },
+    "externalDocs": {
+        "description": "SpringDoc Full Documentation",
+        "url": "https://springdoc.org/"
+    },
+    "servers": [
+        {
+            "url": "http://192.168.1.253:7010"
+        }
+    ],
+    "security": [
+        {
+            "apiKey": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "SysLogin",
+            "description": "用户"
+        },
+        {
+            "name": "SysAbout",
+            "description": "关于我们"
+        },
+        {
+            "name": "SysDepartment",
+            "description": "组织部门"
+        },
+        {
+            "name": "SysDictionaries",
+            "description": "字典"
+        },
+        {
+            "name": "Messagelog",
+            "description": "消息日志"
+        },
+        {
+            "name": "SysRole",
+            "description": "角色"
+        },
+        {
+            "name": "SysRoleMenu",
+            "description": "角色菜单"
+        },
+        {
+            "name": "SysConfig",
+            "description": "配置表"
+        },
+        {
+            "name": "Commonlog",
+            "description": "系统日志"
+        },
+        {
+            "name": "SysMenu",
+            "description": "菜单"
+        },
+        {
+            "name": "SysVersion",
+            "description": "版本管理"
+        }
+    ],
+    "paths": {
+        "/sys/version/removeByIds": {
+            "post": {
+                "tags": [
+                    "SysVersion"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsSysVersion",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/version/page": {
+            "post": {
+                "tags": [
+                    "SysVersion"
+                ],
+                "summary": "版本管理分页列表",
+                "operationId": "listSysVersion",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/version/onAddEdit": {
+            "post": {
+                "tags": [
+                    "SysVersion"
+                ],
+                "summary": "版本管理添加更新",
+                "operationId": "addSysVersion",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SysVersion"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/roleMenu/removeByIds": {
+            "post": {
+                "tags": [
+                    "SysRoleMenu"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsSysRoleMenu",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/roleMenu/page": {
+            "post": {
+                "tags": [
+                    "SysRoleMenu"
+                ],
+                "summary": "角色菜单分页列表",
+                "operationId": "listSysRoleMenu",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/roleMenu/onAddEdit": {
+            "post": {
+                "tags": [
+                    "SysRoleMenu"
+                ],
+                "summary": "角色菜单添加更新",
+                "operationId": "addSysRoleMenu",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SysRoleMenu"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/roleMenu/getMenuByRoleId": {
+            "post": {
+                "tags": [
+                    "SysRoleMenu"
+                ],
+                "summary": "获取角色",
+                "operationId": "getMenuByRoleIdSysRoleMenu",
+                "parameters": [
+                    {
+                        "name": "roleId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/role/removeByIds": {
+            "post": {
+                "tags": [
+                    "SysRole"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsSysRole",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/role/page": {
+            "post": {
+                "tags": [
+                    "SysRole"
+                ],
+                "summary": "角色分页列表",
+                "operationId": "listSysRole",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/role/onAddEdit": {
+            "post": {
+                "tags": [
+                    "SysRole"
+                ],
+                "summary": "角色添加更新",
+                "operationId": "addSysRole",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SysRole"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/messagelog/removeByIds": {
+            "post": {
+                "tags": [
+                    "Messagelog"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsMessagelog",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/messagelog/page": {
+            "post": {
+                "tags": [
+                    "Messagelog"
+                ],
+                "summary": "消息日志分页列表",
+                "operationId": "listMessagelog",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/messagelog/onAddEdit": {
+            "post": {
+                "tags": [
+                    "Messagelog"
+                ],
+                "summary": "消息日志添加更新",
+                "operationId": "addMessagelog",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Messagelog"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/menu/removeByIds": {
+            "post": {
+                "tags": [
+                    "SysMenu"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsSysMenu",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/menu/page": {
+            "post": {
+                "tags": [
+                    "SysMenu"
+                ],
+                "summary": "菜单分页列表",
+                "operationId": "listSysMenu",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/menu/onAddEdit": {
+            "post": {
+                "tags": [
+                    "SysMenu"
+                ],
+                "summary": "菜单添加更新",
+                "operationId": "addSysMenu",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SysMenu"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/menu/getMenusByPid": {
+            "post": {
+                "tags": [
+                    "SysMenu"
+                ],
+                "summary": "获取菜单列表",
+                "operationId": "getMenusByPidSysMenu",
+                "parameters": [
+                    {
+                        "name": "pid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "isMenu",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/menu/getMenusById": {
+            "post": {
+                "tags": [
+                    "SysMenu"
+                ],
+                "summary": "获取菜单列表",
+                "operationId": "getMenusByIdSysMenu",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/menu/getByPid": {
+            "post": {
+                "tags": [
+                    "SysMenu"
+                ],
+                "summary": "查询子集",
+                "operationId": "getByPidSysMenu",
+                "parameters": [
+                    {
+                        "name": "pid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/login/removeByIds": {
+            "post": {
+                "tags": [
+                    "SysLogin"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsSysLogin",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/login/page": {
+            "post": {
+                "tags": [
+                    "SysLogin"
+                ],
+                "summary": "用户分页列表",
+                "operationId": "listSysLogin",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/login/onAddEdit": {
+            "post": {
+                "tags": [
+                    "SysLogin"
+                ],
+                "summary": "用户添加更新",
+                "operationId": "addSysLogin",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SysLogin"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/dictionaries/removeByIds": {
+            "post": {
+                "tags": [
+                    "SysDictionaries"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsSysDictionaries",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/dictionaries/page": {
+            "post": {
+                "tags": [
+                    "SysDictionaries"
+                ],
+                "summary": "字典分页列表",
+                "operationId": "listSysDictionaries",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/dictionaries/onAddEdit": {
+            "post": {
+                "tags": [
+                    "SysDictionaries"
+                ],
+                "summary": "字典添加更新",
+                "operationId": "addSysDictionaries",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SysDictionaries"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/dictionaries/getSubset": {
+            "post": {
+                "tags": [
+                    "SysDictionaries"
+                ],
+                "summary": "查询多层子集",
+                "operationId": "getSubsetSysDictionaries",
+                "parameters": [
+                    {
+                        "name": "pid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/dictionaries/getByPiD": {
+            "post": {
+                "tags": [
+                    "SysDictionaries"
+                ],
+                "summary": "查询子集",
+                "operationId": "getByPiDSysDictionaries",
+                "parameters": [
+                    {
+                        "name": "pid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/department/removeByIds": {
+            "post": {
+                "tags": [
+                    "SysDepartment"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsSysDepartment",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/department/page": {
+            "post": {
+                "tags": [
+                    "SysDepartment"
+                ],
+                "summary": "组织部门分页列表",
+                "operationId": "listSysDepartment",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/department/onAddEdit": {
+            "post": {
+                "tags": [
+                    "SysDepartment"
+                ],
+                "summary": "组织部门添加更新",
+                "operationId": "addSysDepartment",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SysDepartment"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/department/listSubCenter": {
+            "post": {
+                "tags": [
+                    "SysDepartment"
+                ],
+                "summary": "获取分中心",
+                "operationId": "listSubCenter",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "是否添加库房（0否1是）",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/department/getSubset": {
+            "post": {
+                "tags": [
+                    "SysDepartment"
+                ],
+                "summary": "查询多层子集",
+                "operationId": "getSubsetSysDepartment",
+                "parameters": [
+                    {
+                        "name": "upId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/department/getByPid": {
+            "post": {
+                "tags": [
+                    "SysDepartment"
+                ],
+                "summary": "查询子集",
+                "operationId": "getByPidSysDepartment",
+                "parameters": [
+                    {
+                        "name": "pid",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/config/removeByIds": {
+            "post": {
+                "tags": [
+                    "SysConfig"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsSysConfig",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/config/page": {
+            "post": {
+                "tags": [
+                    "SysConfig"
+                ],
+                "summary": "配置表分页列表",
+                "operationId": "listSysConfig",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/config/onAddEdit": {
+            "post": {
+                "tags": [
+                    "SysConfig"
+                ],
+                "summary": "配置表添加更新",
+                "operationId": "addSysConfig",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SysConfig"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/commonlog/removeByIds": {
+            "post": {
+                "tags": [
+                    "Commonlog"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsCommonlog",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/commonlog/page": {
+            "post": {
+                "tags": [
+                    "Commonlog"
+                ],
+                "summary": "系统日志分页列表",
+                "operationId": "listCommonlog",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/commonlog/onAddEdit": {
+            "post": {
+                "tags": [
+                    "Commonlog"
+                ],
+                "summary": "系统日志添加更新",
+                "operationId": "addCommonlog",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Commonlog"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/about/removeByIds": {
+            "post": {
+                "tags": [
+                    "SysAbout"
+                ],
+                "summary": "批量删除",
+                "operationId": "removeByIdsSysAbout",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/about/page": {
+            "post": {
+                "tags": [
+                    "SysAbout"
+                ],
+                "summary": "关于我们分页列表",
+                "operationId": "listSysAbout",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PageModel"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/about/onAddEdit": {
+            "post": {
+                "tags": [
+                    "SysAbout"
+                ],
+                "summary": "关于我们添加更新",
+                "operationId": "addSysAbout",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/SysAbout"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/version/remove": {
+            "get": {
+                "tags": [
+                    "SysVersion"
+                ],
+                "summary": "版本管理删除(单个条目)",
+                "operationId": "removeSysVersion",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/version/info": {
+            "get": {
+                "tags": [
+                    "SysVersion"
+                ],
+                "summary": "版本管理详情",
+                "operationId": "infoSysVersion",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/roleMenu/remove": {
+            "get": {
+                "tags": [
+                    "SysRoleMenu"
+                ],
+                "summary": "角色菜单删除(单个条目)",
+                "operationId": "removeSysRoleMenu",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/roleMenu/info": {
+            "get": {
+                "tags": [
+                    "SysRoleMenu"
+                ],
+                "summary": "角色菜单详情",
+                "operationId": "infoSysRoleMenu",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/role/remove": {
+            "get": {
+                "tags": [
+                    "SysRole"
+                ],
+                "summary": "角色删除(单个条目)",
+                "operationId": "removeSysRole",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/role/info": {
+            "get": {
+                "tags": [
+                    "SysRole"
+                ],
+                "summary": "角色详情",
+                "operationId": "infoSysRole",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/messagelog/remove": {
+            "get": {
+                "tags": [
+                    "Messagelog"
+                ],
+                "summary": "消息日志删除(单个条目)",
+                "operationId": "removeMessagelog",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/messagelog/info": {
+            "get": {
+                "tags": [
+                    "Messagelog"
+                ],
+                "summary": "消息日志详情",
+                "operationId": "infoMessagelog",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/menu/remove": {
+            "get": {
+                "tags": [
+                    "SysMenu"
+                ],
+                "summary": "菜单删除(单个条目)",
+                "operationId": "removeSysMenu",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/menu/info": {
+            "get": {
+                "tags": [
+                    "SysMenu"
+                ],
+                "summary": "菜单详情",
+                "operationId": "infoSysMenu",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/login/remove": {
+            "get": {
+                "tags": [
+                    "SysLogin"
+                ],
+                "summary": "用户删除(单个条目)",
+                "operationId": "removeSysLogin",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/login/info": {
+            "get": {
+                "tags": [
+                    "SysLogin"
+                ],
+                "summary": "用户详情",
+                "operationId": "infoSysLogin",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/dictionaries/remove": {
+            "get": {
+                "tags": [
+                    "SysDictionaries"
+                ],
+                "summary": "字典删除(单个条目)",
+                "operationId": "removeSysDictionaries",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/dictionaries/info": {
+            "get": {
+                "tags": [
+                    "SysDictionaries"
+                ],
+                "summary": "字典详情",
+                "operationId": "infoSysDictionaries",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/department/remove": {
+            "get": {
+                "tags": [
+                    "SysDepartment"
+                ],
+                "summary": "组织部门删除(单个条目)",
+                "operationId": "removeSysDepartment",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/department/info": {
+            "get": {
+                "tags": [
+                    "SysDepartment"
+                ],
+                "summary": "组织部门详情",
+                "operationId": "infoSysDepartment",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/config/remove": {
+            "get": {
+                "tags": [
+                    "SysConfig"
+                ],
+                "summary": "配置表删除(单个条目)",
+                "operationId": "removeSysConfig",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/config/info": {
+            "get": {
+                "tags": [
+                    "SysConfig"
+                ],
+                "summary": "配置表详情",
+                "operationId": "infoSysConfig",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/commonlog/remove": {
+            "get": {
+                "tags": [
+                    "Commonlog"
+                ],
+                "summary": "系统日志删除(单个条目)",
+                "operationId": "removeCommonlog",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/commonlog/info": {
+            "get": {
+                "tags": [
+                    "Commonlog"
+                ],
+                "summary": "系统日志详情",
+                "operationId": "infoCommonlog",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/about/remove": {
+            "get": {
+                "tags": [
+                    "SysAbout"
+                ],
+                "summary": "关于我们删除(单个条目)",
+                "operationId": "removeSysAbout",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sys/about/info": {
+            "get": {
+                "tags": [
+                    "SysAbout"
+                ],
+                "summary": "关于我们详情",
+                "operationId": "infoSysAbout",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad Request",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/JsonResult"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "JsonResult": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "content": {
+                        "type": "object"
+                    }
+                }
+            },
+            "PageModel": {
+                "type": "object",
+                "properties": {
+                    "filter": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/查询字段"
+                        }
+                    },
+                    "token": {
+                        "type": "string"
+                    },
+                    "pageNum": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "pageSize": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            },
+            "查询字段": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "查询名称 数据库里面字段"
+                    },
+                    "value": {
+                        "type": "object",
+                        "description": "该字段的值"
+                    },
+                    "symbols": {
+                        "type": "string",
+                        "description": "判断  eq =  , like 模糊 ，ge 大于等于，le 小于等于，orderByDesc 倒序，orderByAsc 顺序"
+                    }
+                }
+            },
+            "SysVersion": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "version": {
+                        "type": "string",
+                        "description": "版本号"
+                    },
+                    "des": {
+                        "type": "string",
+                        "description": "更新描述"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "更新时间",
+                        "format": "date-time"
+                    }
+                },
+                "description": "版本管理"
+            },
+            "SysRoleMenu": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "主键",
+                        "format": "int64"
+                    },
+                    "roleId": {
+                        "type": "integer",
+                        "description": "角色主键",
+                        "format": "int64"
+                    },
+                    "menuId": {
+                        "type": "integer",
+                        "description": "菜单主键",
+                        "format": "int64"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "时间",
+                        "format": "date-time"
+                    }
+                },
+                "description": "角色菜单"
+            },
+            "SysRole": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "主键",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "角色"
+                    },
+                    "text": {
+                        "type": "string",
+                        "description": "所有权限"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "时间",
+                        "format": "date-time"
+                    },
+                    "roleMenus": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                },
+                "description": "角色"
+            },
+            "Messagelog": {
+                "type": "object",
+                "properties": {
+                    "messqgelogId": {
+                        "type": "string"
+                    },
+                    "uid": {
+                        "type": "string",
+                        "description": "用户编号"
+                    },
+                    "userName": {
+                        "type": "string",
+                        "description": "名字"
+                    },
+                    "type": {
+                        "type": "integer",
+                        "description": "消息类型 0大屏更新日志  1手写消息  2审核消息  3周期审核",
+                        "format": "int32"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "date": {
+                        "type": "string",
+                        "description": "发送内容"
+                    },
+                    "state": {
+                        "type": "string",
+                        "description": "状态"
+                    },
+                    "isRead": {
+                        "type": "integer",
+                        "description": "是否已读",
+                        "format": "int32"
+                    },
+                    "readTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "description": "消息日志"
+            },
+            "SysMenu": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "唯一",
+                        "format": "int64"
+                    },
+                    "parentId": {
+                        "type": "integer",
+                        "description": "父节点",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "名称"
+                    },
+                    "isMenu": {
+                        "type": "integer",
+                        "description": "菜单类型 0默认菜单  1功能  2大屏",
+                        "format": "int32"
+                    },
+                    "type": {
+                        "type": "integer",
+                        "description": "加载方式",
+                        "format": "int32"
+                    },
+                    "sortNumber": {
+                        "type": "integer",
+                        "description": "排序",
+                        "format": "int32"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "地址"
+                    },
+                    "sign": {
+                        "type": "string",
+                        "description": "按钮"
+                    },
+                    "color": {
+                        "type": "string",
+                        "description": "颜色"
+                    },
+                    "status": {
+                        "type": "integer",
+                        "description": "状态",
+                        "format": "int32"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "时间",
+                        "format": "date-time"
+                    },
+                    "des": {
+                        "type": "string"
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SysMenu"
+                        }
+                    },
+                    "roleId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "localMenu": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                },
+                "description": "菜单"
+            },
+            "SysLogin": {
+                "type": "object",
+                "properties": {
+                    "loginId": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "realName": {
+                        "type": "string",
+                        "description": "真实姓名"
+                    },
+                    "userName": {
+                        "type": "string",
+                        "description": "用户名"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "手机号码"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "密码"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "创建时间",
+                        "format": "date-time"
+                    },
+                    "openId": {
+                        "type": "string",
+                        "description": "open_id"
+                    },
+                    "endLoginTime": {
+                        "type": "string",
+                        "description": "最后登录时间",
+                        "format": "date-time"
+                    },
+                    "endLoginIp": {
+                        "type": "string",
+                        "description": "最后登录ip"
+                    },
+                    "used": {
+                        "type": "integer",
+                        "description": "是否启用",
+                        "format": "int32"
+                    },
+                    "uid": {
+                        "type": "string",
+                        "description": "关联人员编号"
+                    },
+                    "roleId": {
+                        "type": "array",
+                        "description": "角色编号",
+                        "items": {
+                            "type": "integer",
+                            "description": "角色编号",
+                            "format": "int64"
+                        }
+                    }
+                },
+                "description": "用户"
+            },
+            "SysDictionaries": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "编号",
+                        "format": "int64"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "名称"
+                    },
+                    "sign": {
+                        "type": "string",
+                        "description": "标签"
+                    },
+                    "pid": {
+                        "type": "integer",
+                        "description": "上级编号",
+                        "format": "int64"
+                    },
+                    "sort": {
+                        "type": "integer",
+                        "description": "排序",
+                        "format": "int32"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SysDictionaries"
+                        }
+                    }
+                },
+                "description": "字典"
+            },
+            "File": {
+                "type": "object",
+                "properties": {
+                    "fileId": {
+                        "type": "string"
+                    },
+                    "fileName": {
+                        "type": "string",
+                        "description": "文件名"
+                    },
+                    "fileUrl": {
+                        "type": "string",
+                        "description": "文件地址"
+                    },
+                    "fileType": {
+                        "type": "string",
+                        "description": "0视频1图片2文档"
+                    },
+                    "isDelete": {
+                        "type": "integer",
+                        "description": "0未删除1已删除",
+                        "format": "int32"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "fileModule": {
+                        "type": "string",
+                        "description": "关联模块"
+                    },
+                    "fileObjectId": {
+                        "type": "string",
+                        "description": "关联对象id"
+                    }
+                },
+                "description": "附件资源库"
+            },
+            "SysDepartment": {
+                "type": "object",
+                "properties": {
+                    "deptId": {
+                        "type": "string",
+                        "description": "编号"
+                    },
+                    "deptName": {
+                        "type": "string",
+                        "description": "部门名称"
+                    },
+                    "deptLicense": {
+                        "type": "string",
+                        "description": "营业执照"
+                    },
+                    "deptManagement": {
+                        "type": "string",
+                        "description": "专业管理"
+                    },
+                    "deptDuty": {
+                        "type": "string",
+                        "description": "部门职责"
+                    },
+                    "deptLeader": {
+                        "type": "string",
+                        "description": "部门负责人"
+                    },
+                    "deptType": {
+                        "type": "integer",
+                        "description": "部门类型(0市部门1分中心)",
+                        "format": "int32"
+                    },
+                    "deptNum": {
+                        "type": "integer",
+                        "description": "部门人数",
+                        "format": "int32"
+                    },
+                    "parentId": {
+                        "type": "string",
+                        "description": "父节点"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "deptSort": {
+                        "type": "integer",
+                        "description": "排序",
+                        "format": "int32"
+                    },
+                    "deptLongitude": {
+                        "type": "string",
+                        "description": "经度"
+                    },
+                    "deptLatitude": {
+                        "type": "string",
+                        "description": "纬度"
+                    },
+                    "deptAddress": {
+                        "type": "string",
+                        "description": "地址"
+                    },
+                    "children": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/SysDepartment"
+                        }
+                    },
+                    "warehouseList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Warehouse"
+                        }
+                    },
+                    "files": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/File"
+                        }
+                    }
+                },
+                "description": "组织部门"
+            },
+            "Warehouse": {
+                "type": "object",
+                "properties": {
+                    "warehouseId": {
+                        "type": "string"
+                    },
+                    "warehouseDeptId": {
+                        "type": "string",
+                        "description": "所属分中心"
+                    },
+                    "warehouseLevel": {
+                        "type": "string",
+                        "description": "级别"
+                    },
+                    "warehouseName": {
+                        "type": "string",
+                        "description": "名称"
+                    },
+                    "warehouseAddress": {
+                        "type": "string",
+                        "description": "地址"
+                    }
+                },
+                "description": "库房管理"
+            },
+            "SysConfig": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "配置id",
+                        "format": "int64"
+                    },
+                    "sign": {
+                        "type": "string",
+                        "description": "标签名称"
+                    },
+                    "keys": {
+                        "type": "string",
+                        "description": "字段名称"
+                    },
+                    "values": {
+                        "type": "string",
+                        "description": "默认值"
+                    },
+                    "sort": {
+                        "type": "integer",
+                        "description": "排序",
+                        "format": "int32"
+                    },
+                    "status": {
+                        "type": "boolean",
+                        "description": "是否隐藏"
+                    }
+                },
+                "description": "配置表"
+            },
+            "Commonlog": {
+                "type": "object",
+                "properties": {
+                    "commonlogId": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "controller": {
+                        "type": "string"
+                    },
+                    "parameter": {
+                        "type": "string"
+                    },
+                    "msg": {
+                        "type": "string"
+                    },
+                    "userId": {
+                        "type": "string"
+                    },
+                    "userName": {
+                        "type": "string"
+                    },
+                    "coId": {
+                        "type": "string"
+                    },
+                    "coName": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "string"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "remoteIp": {
+                        "type": "string"
+                    },
+                    "dealTime": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                },
+                "description": "系统日志"
+            },
+            "SysAbout": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "编号",
+                        "format": "int64"
+                    },
+                    "company": {
+                        "type": "string",
+                        "description": "公司"
+                    },
+                    "created": {
+                        "type": "string",
+                        "description": "创建者"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "手机号码"
+                    },
+                    "des": {
+                        "type": "string",
+                        "description": "描述"
+                    },
+                    "version": {
+                        "type": "string",
+                        "description": "版本号"
+                    }
+                },
+                "description": "关于我们"
+            }
+        },
+        "securitySchemes": {
+            "apiKey": {
+                "type": "apiKey",
+                "description": "Description about the TOKEN",
+                "name": "loginToken",
+                "in": "header"
+            }
+        }
+    }
+}

@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = [
     // 参考 @umijs/openapi type GenerateServiceProps
     // requestLibPath?: string;
@@ -35,14 +37,22 @@ module.exports = [
     // };
     // namespace?: string;
     // mockFolder?: string;
-    {
-        projectName: 'api',
-        schemaPath: 'http://192.168.1.251:7000/working/v3/api-docs/api',
-        requestLibPath: "import { request } from '@/utils/request'",
-    },
+    // {
+    //     projectName: 'api',
+    //     schemaPath: 'http://192.168.1.251:7000/working/v3/api-docs/api',
+    //     requestLibPath: "import { request } from '@/utils/request'",
+    // },
     {
         projectName: 'hk',
-        schemaPath: 'http://192.168.1.251:7000/working/v3/api-docs/hk',
+        // schemaPath: 'http://192.168.1.251:7000/working/v3/api-docs/hk',
+        schemaPath: path.join(__dirname, '../static/zd-sys.json'),
         requestLibPath: "import { request } from '@/utils/request'",
+        hook: {
+            customFunctionName(OperationObject) {
+                return OperationObject.path.replace(/\/.{0,1}/g, (w) =>
+                    w[1].toLocaleUpperCase()
+                )
+            },
+        },
     },
 ]
