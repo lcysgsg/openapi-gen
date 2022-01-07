@@ -1,4 +1,4 @@
-const { generateService, getSchema } = require('@umijs/openapi')
+const { generateService, getSchema } = require('openapi2typescript-temp')
 const path = require('path')
 const fs = require('fs')
 const pkgDir = require('pkg-dir')
