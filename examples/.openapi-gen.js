@@ -49,9 +49,9 @@ module.exports = [
         requestLibPath: "import { request } from '@/utils/request'",
         hook: {
             customFunctionName(OperationObject) {
-                return OperationObject.path.replace(/\/.{0,1}/g, (w) =>
-                    w[1].toLocaleUpperCase()
-                )
+                return OperationObject.path
+                    .replace(/\/\{.*\}/g, '')
+                    .replace(/(\/|-|_).{0,1}/g, (w) => w[1].toLocaleUpperCase())
             },
         },
     },

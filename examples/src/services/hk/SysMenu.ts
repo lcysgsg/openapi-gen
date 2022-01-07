@@ -40,11 +40,8 @@ export async function SysMenuOnAddEdit(body: API.SysMenu, options?: { [key: stri
 
 /** 获取菜单列表 POST /sys/menu/getMenusByPid */
 export async function SysMenuGetMenusByPid(
-  params: {
-    // query
-    pid: number;
-    isMenu: number;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysMenuGetMenusByPidParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/menu/getMenusByPid', {
@@ -66,10 +63,8 @@ export async function SysMenuGetMenusById(options?: { [key: string]: any }) {
 
 /** 查询子集 POST /sys/menu/getByPid */
 export async function SysMenuGetByPid(
-  params: {
-    // query
-    pid: number;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysMenuGetByPidParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/menu/getByPid', {
@@ -83,10 +78,8 @@ export async function SysMenuGetByPid(
 
 /** 菜单删除(单个条目) GET /sys/menu/remove */
 export async function SysMenuRemove(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysMenuRemoveParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/menu/remove', {
@@ -100,10 +93,8 @@ export async function SysMenuRemove(
 
 /** 菜单详情 GET /sys/menu/info */
 export async function SysMenuInfo(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysMenuInfoParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/menu/info', {

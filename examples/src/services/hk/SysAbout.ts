@@ -40,10 +40,8 @@ export async function SysAboutOnAddEdit(body: API.SysAbout, options?: { [key: st
 
 /** 关于我们删除(单个条目) GET /sys/about/remove */
 export async function SysAboutRemove(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysAboutRemoveParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/about/remove', {
@@ -57,10 +55,8 @@ export async function SysAboutRemove(
 
 /** 关于我们详情 GET /sys/about/info */
 export async function SysAboutInfo(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysAboutInfoParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/about/info', {

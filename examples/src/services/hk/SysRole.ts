@@ -40,10 +40,8 @@ export async function SysRoleOnAddEdit(body: API.SysRole, options?: { [key: stri
 
 /** 角色删除(单个条目) GET /sys/role/remove */
 export async function SysRoleRemove(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysRoleRemoveParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/role/remove', {
@@ -57,10 +55,8 @@ export async function SysRoleRemove(
 
 /** 角色详情 GET /sys/role/info */
 export async function SysRoleInfo(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysRoleInfoParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/role/info', {

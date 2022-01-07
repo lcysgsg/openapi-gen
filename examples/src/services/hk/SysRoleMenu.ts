@@ -43,10 +43,8 @@ export async function SysRoleMenuOnAddEdit(
 
 /** 获取角色 POST /sys/roleMenu/getMenuByRoleId */
 export async function SysRoleMenuGetMenuByRoleId(
-  params: {
-    // query
-    roleId: number;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysRoleMenuGetMenuByRoleIdParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/roleMenu/getMenuByRoleId', {
@@ -60,10 +58,8 @@ export async function SysRoleMenuGetMenuByRoleId(
 
 /** 角色菜单删除(单个条目) GET /sys/roleMenu/remove */
 export async function SysRoleMenuRemove(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysRoleMenuRemoveParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/roleMenu/remove', {
@@ -77,10 +73,8 @@ export async function SysRoleMenuRemove(
 
 /** 角色菜单详情 GET /sys/roleMenu/info */
 export async function SysRoleMenuInfo(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysRoleMenuInfoParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/roleMenu/info', {

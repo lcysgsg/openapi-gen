@@ -43,10 +43,8 @@ export async function SysMessagelogOnAddEdit(
 
 /** 消息日志删除(单个条目) GET /sys/messagelog/remove */
 export async function SysMessagelogRemove(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysMessagelogRemoveParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/messagelog/remove', {
@@ -60,10 +58,8 @@ export async function SysMessagelogRemove(
 
 /** 消息日志详情 GET /sys/messagelog/info */
 export async function SysMessagelogInfo(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysMessagelogInfoParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/messagelog/info', {

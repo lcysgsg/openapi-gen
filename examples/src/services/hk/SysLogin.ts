@@ -40,10 +40,8 @@ export async function SysLoginOnAddEdit(body: API.SysLogin, options?: { [key: st
 
 /** 用户删除(单个条目) GET /sys/login/remove */
 export async function SysLoginRemove(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysLoginRemoveParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/login/remove', {
@@ -57,10 +55,8 @@ export async function SysLoginRemove(
 
 /** 用户详情 GET /sys/login/info */
 export async function SysLoginInfo(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysLoginInfoParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/login/info', {

@@ -43,11 +43,8 @@ export async function SysDepartmentOnAddEdit(
 
 /** 获取分中心 POST /sys/department/listSubCenter */
 export async function SysDepartmentListSubCenter(
-  params: {
-    // query
-    /** 是否添加库房（0否1是） */
-    type: number;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysDepartmentListSubCenterParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/department/listSubCenter', {
@@ -61,10 +58,8 @@ export async function SysDepartmentListSubCenter(
 
 /** 查询多层子集 POST /sys/department/getSubset */
 export async function SysDepartmentGetSubset(
-  params: {
-    // query
-    upId: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysDepartmentGetSubsetParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/department/getSubset', {
@@ -78,10 +73,8 @@ export async function SysDepartmentGetSubset(
 
 /** 查询子集 POST /sys/department/getByPid */
 export async function SysDepartmentGetByPid(
-  params: {
-    // query
-    pid: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysDepartmentGetByPidParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/department/getByPid', {
@@ -95,10 +88,8 @@ export async function SysDepartmentGetByPid(
 
 /** 组织部门删除(单个条目) GET /sys/department/remove */
 export async function SysDepartmentRemove(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysDepartmentRemoveParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/department/remove', {
@@ -112,10 +103,8 @@ export async function SysDepartmentRemove(
 
 /** 组织部门详情 GET /sys/department/info */
 export async function SysDepartmentInfo(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysDepartmentInfoParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/department/info', {

@@ -40,10 +40,8 @@ export async function SysVersionOnAddEdit(body: API.SysVersion, options?: { [key
 
 /** 版本管理删除(单个条目) GET /sys/version/remove */
 export async function SysVersionRemove(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysVersionRemoveParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/version/remove', {
@@ -57,10 +55,8 @@ export async function SysVersionRemove(
 
 /** 版本管理详情 GET /sys/version/info */
 export async function SysVersionInfo(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysVersionInfoParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/version/info', {

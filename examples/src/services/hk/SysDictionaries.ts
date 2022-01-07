@@ -43,10 +43,8 @@ export async function SysDictionariesOnAddEdit(
 
 /** 查询多层子集 POST /sys/dictionaries/getSubset */
 export async function SysDictionariesGetSubset(
-  params: {
-    // query
-    pid: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysDictionariesGetSubsetParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/dictionaries/getSubset', {
@@ -60,10 +58,8 @@ export async function SysDictionariesGetSubset(
 
 /** 查询子集 POST /sys/dictionaries/getByPiD */
 export async function SysDictionariesGetByPiD(
-  params: {
-    // query
-    pid: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysDictionariesGetByPiDParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/dictionaries/getByPiD', {
@@ -77,10 +73,8 @@ export async function SysDictionariesGetByPiD(
 
 /** 字典删除(单个条目) GET /sys/dictionaries/remove */
 export async function SysDictionariesRemove(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysDictionariesRemoveParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/dictionaries/remove', {
@@ -94,10 +88,8 @@ export async function SysDictionariesRemove(
 
 /** 字典详情 GET /sys/dictionaries/info */
 export async function SysDictionariesInfo(
-  params: {
-    // query
-    id: string;
-  },
+  // 叠加生成的Param类型 (非body参数swagger默认没有生成对象)
+  params: API.SysDictionariesInfoParams,
   options?: { [key: string]: any },
 ) {
   return request<API.JsonResult>('/sys/dictionaries/info', {

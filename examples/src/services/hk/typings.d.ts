@@ -1,6 +1,3 @@
-// @ts-ignore
-/* eslint-disable */
-
 declare namespace API {
   type JsonResult = {
     code?: number;
@@ -251,5 +248,127 @@ declare namespace API {
     des?: string;
     /** 版本号 */
     version?: string;
+  };
+
+  type SysRoleMenuGetMenuByRoleIdParams = {
+    roleId: number;
+  };
+
+  type SysMenuGetMenusByPidParams = {
+    pid: number;
+    isMenu: number;
+  };
+
+  type SysMenuGetByPidParams = {
+    pid: number;
+  };
+
+  type SysDictionariesGetSubsetParams = {
+    pid: string;
+  };
+
+  type SysDictionariesGetByPiDParams = {
+    pid: string;
+  };
+
+  type SysDepartmentListSubCenterParams = {
+    /** 是否添加库房（0否1是） */
+    type: number;
+  };
+
+  type SysDepartmentGetSubsetParams = {
+    upId: string;
+  };
+
+  type SysDepartmentGetByPidParams = {
+    pid: string;
+  };
+
+  type SysVersionRemoveParams = {
+    id: string;
+  };
+
+  type SysVersionInfoParams = {
+    id: string;
+  };
+
+  type SysRoleMenuRemoveParams = {
+    id: string;
+  };
+
+  type SysRoleMenuInfoParams = {
+    id: string;
+  };
+
+  type SysRoleRemoveParams = {
+    id: string;
+  };
+
+  type SysRoleInfoParams = {
+    id: string;
+  };
+
+  type SysMessagelogRemoveParams = {
+    id: string;
+  };
+
+  type SysMessagelogInfoParams = {
+    id: string;
+  };
+
+  type SysMenuRemoveParams = {
+    id: string;
+  };
+
+  type SysMenuInfoParams = {
+    id: string;
+  };
+
+  type SysLoginRemoveParams = {
+    id: string;
+  };
+
+  type SysLoginInfoParams = {
+    id: string;
+  };
+
+  type SysDictionariesRemoveParams = {
+    id: string;
+  };
+
+  type SysDictionariesInfoParams = {
+    id: string;
+  };
+
+  type SysDepartmentRemoveParams = {
+    id: string;
+  };
+
+  type SysDepartmentInfoParams = {
+    id: string;
+  };
+
+  type SysConfigRemoveParams = {
+    id: string;
+  };
+
+  type SysConfigInfoParams = {
+    id: string;
+  };
+
+  type SysCommonlogRemoveParams = {
+    id: string;
+  };
+
+  type SysCommonlogInfoParams = {
+    id: string;
+  };
+
+  type SysAboutRemoveParams = {
+    id: string;
+  };
+
+  type SysAboutInfoParams = {
+    id: string;
   };
 }
