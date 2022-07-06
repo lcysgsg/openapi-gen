@@ -1,6 +1,6 @@
 {
     "name": "openapi-gen",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "通过 openapi 生产接口代码及类型",
     "main": "index.js",
     "bin": {
@@ -11,7 +11,7 @@
         "bin/"
     ],
     "scripts": {
-      "prepublishOnly": "np --no-cleanup --yolo --no-publish --any-branch"
+        "prepublishOnly": "np --no-cleanup --yolo --no-publish --any-branch"
     },
     "author": "lcysgsg",
     "license": "ISC",
