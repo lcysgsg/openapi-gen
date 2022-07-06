@@ -13,7 +13,7 @@
     "author": "lcysgsg",
     "license": "ISC",
     "dependencies": {
-        "openapi2typescript-temp": "^0.0.2",
+        "openapi2typescript-temp": "^0.0.4",
         "pkg-dir": "^5.0.0"
     },
     "repository": {
