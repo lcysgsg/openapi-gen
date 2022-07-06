@@ -10,6 +10,9 @@
         "index.js",
         "bin/"
     ],
+    "scripts": {
+      "prepublishOnly": "np --no-cleanup --yolo --no-publish --any-branch"
+    },
     "author": "lcysgsg",
     "license": "ISC",
     "dependencies": {
@@ -19,5 +22,8 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/lcysgsg/openapi-gen"
+    },
+    "devDependencies": {
+        "np": "^7.6.2"
     }
 }
